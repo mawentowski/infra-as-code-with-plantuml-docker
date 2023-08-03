@@ -1,0 +1,13 @@
+@startuml
+actor User
+participant "Web Server" as Server
+participant "App Server" as App
+participant "Database Server" as DB
+
+User -> Server: Request
+Server -> App: Process Request
+App -> DB: Query Database
+DB --> App: Retrieve Data
+App --> Server: Return Response
+Server --> User: Response
+@enduml

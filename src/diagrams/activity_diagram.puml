@@ -1,0 +1,11 @@
+@startuml
+start
+:Login;
+:Process Data;
+if (Data Valid?) then (yes)
+  :Display Data;
+else (no)
+  :Show Error;
+endif
+stop
+@enduml

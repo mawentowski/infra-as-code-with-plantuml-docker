@@ -1,0 +1,8 @@
+{
+  "dockerFile": "../Dockerfile",
+  "forwardPorts": [8080],
+  "mounts": [
+    "source=/Users/mawentowski/Repos/diagrams-as-code/src,target=/workspace,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "/usr/local/bin/entrypoint.sh"
+}

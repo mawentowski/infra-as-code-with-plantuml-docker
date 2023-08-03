@@ -1,0 +1,5 @@
+@startuml
+actor User
+User --> (View Dashboard)
+User --> (Manage Profile)
+@enduml

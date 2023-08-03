@@ -1,0 +1,14 @@
+@startuml
+class Car {
+  + make: string
+  + model: string
+  + year: int
+  + start()
+  + stop()
+}
+class Engine {
+  + horsepower: int
+  + manufacturer: string
+}
+Car --> Engine
+@enduml
