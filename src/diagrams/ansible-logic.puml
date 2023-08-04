@@ -1,0 +1,40 @@
+@startuml
+
+start
+
+if (readme.enabled is set to false - default) then (Yes)
+    :Do not generate a README;
+  stop
+else (No)
+
+  if (section.before is defined) then (Yes)
+    :Insert value of section.before;
+  else (No)
+    if ({sectionId}.before.md exists) then (Yes)
+      :Insert content of {sectionId}.before.md;
+    else (No)
+    endif
+  endif
+
+  if (section.content is defined) then (Yes)
+    :Insert value of section.content;
+  else (No)
+    if ({sectionId}.md exists) then (Yes)
+      :Insert content of {sectionId}.md;
+    else (No)
+    endif
+  endif
+
+  if (section.after is defined) then (Yes)
+    :Insert value of section.after;
+  else (No)
+    if ({sectionId}.after.md exists) then (Yes)
+      :Insert content of {sectionId}.after.md;
+    endif
+  endif
+
+endif
+
+stop
+
+@enduml
