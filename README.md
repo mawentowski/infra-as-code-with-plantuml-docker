@@ -1,12 +1,10 @@
 # Infrastructure-as-Code with PlantUML and Docker
 
-Welcome!
+This infrastructure-focused initiative leverages the power of [PlantUML](https://plantuml.com/), a popular open-source tool for creating diagrams-as-code for infrastructure. With this project, I aim to provide you with a self-contained environment through Docker, including dependencies and tools, such as PlantUML, Nginx, and Java, that allows you to quickly generate diagrams for visualizing your architecture and infrastructure.
 
-This infrastructure-focused initiative leverages the power of PlantUML, a popular open-source tool for creating diagrams-as-code. With this project, I aim to provide you with a self-contained environment through Docker, including dependencies and tools, such as PlantUML, Nginx, and Java, that allows you to quickly generate diagrams for visualizing your architecture and infrastructure.
+While using PlantUML web-based editor in the browser might offer a better user interface, this dockerized project is built around the PlantUML CLI, providing more flexibility, integration possibilities, offline support, version control, and scalability.
 
-Whether you prefer local development or VS Code dev containers, this repository streamlines the diagram generation process. You can quickly generate and visualize your diagrams directly in your browser, making it convenient to iterate and communicate your architectural designs effectively.
-
-For more information about PlantUML and its capabilities, visit the official [PlantUML website](https://plantuml.com/).
+You may prefer to create diagrams initially using a web-based editor! No problem. You can then use this project as a template to automate the diagram generation process, incorporate it into build scripts or Continuous Integration/Continuous Deployment (CI/CD) pipelines, and generate diagrams as part of your project documentation.
 
 ## Table of contents
 
@@ -89,7 +87,7 @@ docker build -t <your-image-name> .
 docker run -dp 127.0.0.1:8080:8080 -v $(pwd)/src:/workspace/ <your-image-name>:latest
 ```
 
-**Note:** In this command, the `src` folder is mounted to the workspace folder in the container. Replace `<your-image-name>` with a custom name for your Docker image.
+**Note:** In this command, the `src` folder is mounted to the `/workspace` folder in the container. Replace `<your-image-name>` with a custom name for your Docker image.
 
 3. Access the diagrams in your browser at `http://localhost:8080`.
 
@@ -151,9 +149,12 @@ docker build --no-cache -t <your-image-name> -f Dockerfile .
 
 - [ ] Introduce a new feature to **encode diagram text as YAML** that can be inserted into diagram entities or elements.
 
-- [ ] Implement a script to automatically clean out diagrams from the container's usr/share/nginx/html folder when there is no longer a corresponding source diagram in workspace/diagrams. This ensures that deleted diagrams no longer appear on the landing page, providing a cleaner and more organized visualization experience.
+- [ ] Implement a script to automatically clean out diagrams from the container's `usr/share/nginx/html` folder when there is no longer a corresponding source diagram in `workspace/diagrams`. This ensures that deleted diagrams no longer appear on the landing page, providing a cleaner and more organized visualization experience.
 
 - [ ] Automatically load helpful and relevant **VS Code extensions** in the Dev Container.
+  - [ ] PlantUML
+  - [ ] Git
+  - [ ] vscode-icons
 
 ## Contributing
 
