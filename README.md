@@ -1,6 +1,6 @@
 # Infrastructure-as-Code with PlantUML and Docker
 
-This infrastructure-focused initiative leverages the power of [PlantUML](https://plantuml.com/), a popular open-source tool for creating diagrams-as-code for infrastructure. With this project, I aim to provide you with a self-contained environment through Docker, including dependencies and tools, such as PlantUML, Nginx, and Java, that allows you to quickly generate diagrams for visualizing your architecture and infrastructure.
+This infrastructure-focused initiative leverages the power of [PlantUML](https://plantuml.com/), a popular open-source tool for creating diagrams-as-code for infrastructure. With this project, I aim to provide you with a self-contained environment through Docker, including dependencies and tools, such as PlantUML, Nginx, Graphviz, and Java, that allows you to quickly generate diagrams for visualizing your architecture and infrastructure.
 
 While using PlantUML web-based editor in the browser might offer a better user interface, this dockerized project is built around the PlantUML CLI, providing more flexibility, integration possibilities, offline support, version control, and scalability.
 
@@ -99,7 +99,7 @@ Refer to the [appendix](#appendix) section below for more helpful Docker command
 2. Generate diagrams using the following command:
 
 ```java
-java -jar libs/plantuml-1.2023.10.jar -tsvg src/diagrams/source_diagram.puml -o src/build
+java -jar libs/plantuml-1.2023.10.jar -tsvg src/diagrams/C4_Component_bigbankplc.puml -o ../../src/build
 ```
 
 ## Appendix
@@ -142,7 +142,7 @@ docker logs <container-id>
 **Clear image cache to rebuild the image:**
 
 ```bash
-docker build --no-cache -t <your-image-name> -f Dockerfile .
+docker build --no-cache -t plantum-dev -f Dockerfile .
 ```
 
 ## Roadmap

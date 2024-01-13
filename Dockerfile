@@ -37,13 +37,3 @@ EXPOSE 8080
 
 # Use entrypoint.sh as the entrypoint script
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-
-
-# CMD ["java", "-Djava.awt.headless=true", "-jar", "/usr/local/bin/plantuml.jar", "-tsvg", "/workspace/diagrams/source/cat.puml", "-o", "/workspace/diagrams/generated"]
-
-
-# docker build -t plantuml-dev .
-# docker run -dp 127.0.0.1:8080:8080 plantuml-dev:latest
-# docker start romantic_moser
-
-#`docker run -dp 127.0.0.1:8080:8080 -v $(pwd)/src:/workspace/ plantuml-dev:latest`

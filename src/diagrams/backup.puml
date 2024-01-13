@@ -7,11 +7,11 @@ if (readme.enabled is set to false - default) then (Yes)
   stop
 else (No)
 
-  if ({sectionId}.before.md exists) then (Yes)
-    :Insert value of {sectionId}.before.md;
-  else (Yes)
+  if (section.before is defined) then (Yes)
+    :Insert value of section.before;
+  else (No)
     if ({sectionId}.before.md exists) then (Yes)
-      :Insert value of {sectionId}.before.md;
+      :Insert content of {sectionId}.before.md;
     else (No)
     endif
   endif

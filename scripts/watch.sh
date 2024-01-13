@@ -26,3 +26,17 @@ while true; do
   inotifywait -r -e modify /workspace/diagrams
   generate_diagrams
 done
+
+
+# find /workspace/diagrams -type f -name "*.puml" -print0 | xargs -0 java -Djava.awt.headless=true -jar /usr/local/bin/plantuml.jar -tsvg -o /usr/share/nginx/html
+
+
+find /Users/mawentowski/Repos/infra-as-code-with-plantuml-docker/src/diagrams -type f -name "*.puml" -print0 | xargs -0 -I {} java -Djava.awt.headless=true -jar libs/plantuml-1.2023.10.jar -tsvg -o ../../src/build {}
+
+
+
+
+# find /Users/mawentowski/Repos/infra-as-code-with-plantuml-docker/src/diagrams -type f -name "*.puml" -print0 | xargs -0 java -jar libs/plantuml-1.2023.10.jar -tsvg -o ../../src/build
+
+
+
